@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Flowers</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000, #000000, #fad0c4);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+
+
+        /* Letras animadas */
+        .greetings span {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+                         0 0 20px rgba(78, 26, 34, 0.8);
+            display: inline-block;
+            animation: bounce 1s ease infinite;
+        }
+
+        .greetings span:nth-child(1) { animation-delay: 0s; }
+        .greetings span:nth-child(2) { animation-delay: 0.1s; }
+        .greetings span:nth-child(3) { animation-delay: 0.2s; }
+        .greetings span:nth-child(4) { animation-delay: 0.3s; }
+        .greetings span:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Descripción */
+        .description span {
+            font-size: 1.5rem;
+            color: #fff;
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+            line-height: 2rem;
+            animation: fadeIn 2s ease forwards;
+            opacity: 0;
+            text-shadow: 0 0 8px rgba(255,255,255,0.4);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Botón animado */
+        .button {
+            margin-top: 40px;
+        }
+
+        .botones {
+            background: linear-gradient(135deg, #0a0405, #190f13);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .botones:hover {
+            background: linear-gradient(135deg, #221719, #272221);
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .botones a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Pétalos cayendo */
+        .petal {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: pink;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Letras animadas -->
+    <div class="greetings">
+        <span>H</span>
+        <span>o</span>
+        <span>l</span>
+        <span>a</span>
+        <span>!</span>
+    </div>
+
+    <!-- Mensaje -->
+    <div class="description">
+        <span>Es un detallito para ti, ojalá te guste :) <br><br>
+        👉👈</span>
+    </div>
+
+    <!-- Botón -->
+    <div class="button">
+        <button class="botones">
+            <a href="flower.html">CLICK AQUÍ</a>
+        </button>
+    </div>
+
+    <!-- Pétalos animados -->
+    <div class="petals-container">
+        <div class="petal" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="petal" style="left: 30%; animation-delay: 1s;"></div>
+        <div class="petal" style="left: 50%; animation-delay: 2s;"></div>
+        <div class="petal" style="left: 70%; animation-delay: 3s;"></div>
+        <div class="petal" style="left: 90%; animation-delay: 4s;"></div>
+    </div>
+
+</body>
+</html>
+-delay: 4s;"></div>
+    </div>
+
+</body>
+</html>
