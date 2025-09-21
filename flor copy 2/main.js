@@ -1,15 +1,17 @@
-window.addEventListener('load', () => {
-    document.body.classList.remove("container");
-    const audio = document.querySelector("audio");
-    if (audio) {
-        audio.play().catch(error => {
-            console.log("Audio autoplay was prevented: ", error);
-            // Show a play button or message to the user if autoplay fails.
-            // For now, we just log the error.
-            // We could add a click listener to the body to play the audio on the first click.
-            document.body.addEventListener('click', () => {
-                audio.play();
-            }, { once: true });
-        });
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const playButton = document.getElementById('play-button');
+    const musicSelection = document.getElementById('music-selection');
+
+    playButton.addEventListener('click', () => {
+        const selectedMusic = musicSelection.value;
+        let songName = '';
+        if (selectedMusic.includes('Floricienta')) {
+            songName = 'floricienta';
+        } else if (selectedMusic.includes('Yatra')) {
+            songName = 'yatra';
+        }
+
+        // Redirigir a flower.html con la canción seleccionada como parámetro
+        window.location.href = `flower.html?song=${songName}`;
+    });
 });
