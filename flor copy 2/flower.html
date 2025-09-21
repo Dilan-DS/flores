@@ -440,49 +440,45 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const song = urlParams.get('song');
-            document.body.classList.remove("container");
-            let songSrc = '';
-            let lyricsSrc = '';
+      document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const song = urlParams.get("song");
+        document.body.classList.remove("container");
+        let songSrc = "";
+        let lyricsSrc = "";
 
-            if (song === 'floricienta') {
-                songSrc = 'Song/Floricienta-Flores-amarillas-_letra_.mp3';
-                lyricsSrc = 'floricienta-lyrics.js';
-            } else if (song === 'yatra') {
-                songSrc = 'Song/Sebastián Yatra - Tacones Rojos.mp3';
-                lyricsSrc = 'anim.js';
+        if (song === "floricienta") {
+          songSrc = "Song/Floricienta-Flores-amarillas-_letra_.mp3";
+          lyricsSrc = "floricienta-lyrics.js";
+        } else if (song === "yatra") {
+          songSrc = "Song/Sebastián Yatra - Tacones Rojos.mp3";
+          lyricsSrc = "anim.js";
+        }
+
+        if (songSrc) {
+          const audio = document.createElement("audio");
+          audio.src = songSrc;
+          audio.autoplay = true;
+          document.body.appendChild(audio);
+
+          const script = document.createElement("script");
+          script.src = lyricsSrc;
+          document.body.appendChild(script);
+
+          audio.onended = function () {
+            const finalCard = document.getElementById("final-card");
+            if (finalCard) {
+              finalCard.classList.add("visible");
             }
-
-            if (songSrc) {
-                const audio = document.createElement('audio');
-                audio.src = songSrc;
-                audio.autoplay = true;
-                document.body.appendChild(audio);
-
-                const script = document.createElement('script');
-                script.src = lyricsSrc;
-                document.body.appendChild(script);
-                
-                audio.onended = function() {
-                  const finalCard = document.getElementById('final-card');
-                  if (finalCard) {
-                    finalCard.classList.add('visible');
-                  }
-                };
-            }
-        });
+          };
+        }
+      });
     </script>
     <div id="final-card">
       <br /><br />
-      Eres una niña muy linda 🌼, y siempre estaré para lo que necesites.<br />
-      Gracias por ser como eres, por tu forma especial de ver el mundo y hacer
-      que todo sea más bonito. 🌟<br /><br />
-      Ojalá estas flores amarillas alegren un poquito tu día. 🌻<br /><br />
-      Espero te haya gustado este pequeño detallito... jeje, no son flores
-      reales, pero lo hice con mucho cariño para ti. 💛<br /><br />
-      — Con aprecio, tu amigo 👉👈🤍<br /><br />
+      Eres una niña muy linda 🌻,<br />
+      Espero te haya gustado este pequeño detallito... 💛<br /><br />
+      👉👈🤍<br /><br />
     </div>
   </body>
 </html>
